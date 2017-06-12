@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <name>ayeQ myAssets</name>
+    <name>myAssets</name>
     <key>myassets</key>
     <state>stable</state>
-    <logo>https://raw.githubusercontent.com/deadmanIsARabbit/ayeqGLPImyAssets/master/glpi-myassets/ayeQLogo.png</logo>
+    <logo>https://raw.githubusercontent.com/deadmanIsARabbit/myAssets/master/glpi-myassets/ayeQLogo.png</logo>
     <description>
         <short>
             <en><![CDATA[Displays user assets on his/her dashboard]]></en>
@@ -11,13 +11,13 @@
         </short>
         <long>
             <en><![CDATA[After the user logs in his or her assets are displayed on the dashboard. This can be turned off and on per user profile. It's also possible to select categories should be displayed. The plugin listens to the configuration made under 'Administration->Profile->Assistance->Association']]></en>
-            <de><![CDATA[Nach dem Login wird dem Benutzer das ihm zugewiesene Inventar auf dem Dashboard angezeigt. Dies kann über die Profileinstellungen ('Administration->Profile->Helpdesk->Vereininung') aus und eingeschaltet werden, weitehrin kann ausgewählt werden, welche Kategorien dem Benutzer angezeigt werden. ]]></de>
+            <de><![CDATA[Nach dem Login wird dem Benutzer das ihm zugewiesene Inventar auf dem Dashboard angezeigt. Dies kann über die Profileinstellungen ('Administration->Profile->Helpdesk->Vereinigung') aus und eingeschaltet werden, weitehrin kann ausgewählt werden, welche Kategorien dem Benutzer angezeigt werden.]]></de>
         </long>
     </description>
-    <homepage>https://github.com/deadmanIsARabbit/ayeqGLPImyAssets</homepage>
-    <download>https://github.com/deadmanIsARabbit/ayeqGLPImyAssetsreleases</download>
-    <issues>https://github.com/deadmanIsARabbit/ayeqGLPImyAssets/issues</issues>
-    <readme>https://raw.githubusercontent.com/deadmanIsARabbit/ayeqGLPImyAssets/master/README.md</readme>
+    <homepage>https://github.com/deadmanIsARabbit/myAssets</homepage>
+    <download>https://github.com/deadmanIsARabbit/myAssets/releases</download>
+    <issues>https://github.com/deadmanIsARabbit/myAssets/issues</issues>
+    <readme>https://raw.githubusercontent.com/deadmanIsARabbit/myAssets/master/README.md</readme>
     <authors>
         <author>Matthäus Kuhn <m.kuhn@ayeq-benu.com></author>
 
