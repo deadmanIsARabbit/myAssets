@@ -5,7 +5,7 @@
 	function plugin_version_myassets() {
 		return array(
 			'name'           => "My Assets",
-			'version'        => '0.0.1',
+			'version'        => '1.0',
 			'author'         => 'Matthaeus Kuhn <m.kuhn@ayeq-benu.com>',
 			'license'        => 'GPLv2+',
 			'homepage'       => 'http://ayeq-benu.com/',
