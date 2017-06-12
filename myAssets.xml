@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <root>
-    <name>myAssets</name>
+    <name>My Assets</name>
     <key>myassets</key>
     <state>stable</state>
     <logo>https://raw.githubusercontent.com/deadmanIsARabbit/myAssets/master/ayeQLogo.png</logo>
@@ -19,8 +18,7 @@
     <issues>https://github.com/deadmanIsARabbit/myAssets/issues</issues>
     <readme>https://raw.githubusercontent.com/deadmanIsARabbit/myAssets/master/README.md</readme>
     <authors>
-        <author>Matthäus Kuhn <m.kuhn@ayeq-benu.com></author>
-
+        <author>Matthaeus Kuhn <m.kuhn@ayeq-benu.com></author>b
     </authors>
     <versions>
         <version>
