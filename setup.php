@@ -5,10 +5,10 @@
 	function plugin_version_myassets() {
 		return array(
 			'name'           => "My Assets",
-			'version'        => '1.0',
-			'author'         => 'Matthaeus Kuhn <m.kuhn@ayeq-benu.com>',
+			'version'        => '1.5',
+			'author'         => 'Hwasung Seo(Mars)',
 			'license'        => 'GPLv2+',
-			'homepage'       => 'http://ayeq-benu.com/',
+			'homepage'       => '',
 			'minGlpiVersion' => '0.91'
 		);
 	};
