@@ -19,9 +19,17 @@ class PluginMyassetsAssets extends CommonGLPI {
 			if (($item = getItemForItemtype($itemtype))
 				&& Ticket::isPossibleToAssignType($itemtype)) {
 				$itemtable = getTableForItemType($itemtype);
+				$modeltable = substr("$itemtable", 0, -1)."models";
+				$model_id = substr($modeltable, 5)."_id";
 
-				$query	=	"SELECT *
+				$query	=	"SELECT `$itemtable`.*,
+							glpi_manufacturers.name as Manufacturer,
+							`$modeltable`.name as Model
 							FROM `$itemtable`
+							RIGHT JOIN glpi_manufacturers
+							ON `$itemtable`.manufacturers_id=glpi_manufacturers.id
+							RIGHT JOIN `$modeltable`
+							ON `$itemtable`.`$model_id`=`$modeltable`.id
 							WHERE `users_id` = '$userID'";
 				if ($item->maybeDeleted()) {
 					$query .= " AND `$itemtable`.`is_deleted` = '0' ";
@@ -41,7 +49,7 @@ class PluginMyassetsAssets extends CommonGLPI {
 					}
 					while ($data = $DB->fetch_assoc($result)) {
 						if (!isset($already_add[$itemtype]) || !in_array($data["id"], $already_add[$itemtype])) {
-							$output = (string)$data["name"];
+							$output = (string)$data["name1"];
 							if (empty($output) || $_SESSION["glpiis_ids_visible"]) {
 								$output = sprintf(__('%1$s (%2$s)'), $output, $data['id']);
 							}
@@ -50,9 +58,13 @@ class PluginMyassetsAssets extends CommonGLPI {
 								if (!empty($data['serial'])) {
 									$output = sprintf(__('%1$s - %2$s'), $output, $data['serial']);
 								}
-								if (!empty($data['otherserial'])) {
-									$output = sprintf(__('%1$s - %2$s'), $output, $data['otherserial']);
+								if (!empty($data['Manufacturer'])) {
+									$output = sprintf(__('%1$s - %2$s'), $output, $data['Manufacturer']);
 								}
+								if (!empty($data['Model'])) {
+									$output = sprintf(__('%1$s - %2$s'), $output, $data['Model']);
+								}
+
 							}
 
 							array_push($type_name, $data);
@@ -71,38 +83,44 @@ class PluginMyassetsAssets extends CommonGLPI {
 	}
 	public function showAssets() {
 		$data = $this->getAssets();
-		echo "
-			<table class='myassets central'>
-		";
+		//echo "
+		//	<table class='myassets central'>
+		//";
 		foreach ($data as &$type) {
 			echo "
 				<tr class='noHover'>
 					<td>
-						<h3>
+						<h3 style='text-align:center;'>
 			";
-						//echo __("Your");
+						echo __("Your");
 						echo " ".array_shift($type)."</h3>
 						<table class='tab_cadrehov'>
 							<tr class='noHover'>";
-							echo "<th>";
+							echo "<th style='text-align:center;'>";
 							echo __("Name");
 							echo "</th>";
 
-							echo "<th>";
+							echo "<th style='text-align:center;'>";
 							echo __("Serial number");
 							echo "</th>";
 
-							echo "<th>";
-							echo __("Inventory number");
+							echo "<th style='text-align:center;'>";
+							echo __("Manufacturer");
 							echo "</th>";
+
+							echo "<th style='text-align:center;'>";
+							echo __("Model");
+							echo "</th>";
+
 
 			echo			"</tr>";
 			foreach ($type as &$asset) {
 				echo "
 						<tr>
-							<td width='200'>".$asset["name"]."</td>
-							<td width='200' style='text-align:center;'>".$asset["serial"]."</td>
-							<td width='200' style='text-align:center;'>".$asset["otherserial"]."</td>
+							<td width='190' style='text-align:center;'>".$asset["name"]."</td>
+							<td width='190' style='text-align:center;'>".$asset["serial"]."</td>
+							<td width='190' style='text-align:center;'>".$asset["Manufacturer"]."</td>
+							<td width='190' style='text-align:center;'>".$asset["Model"]."</td>
 						</tr>";
 			}
 			echo "
@@ -111,10 +129,7 @@ class PluginMyassetsAssets extends CommonGLPI {
 				</tr>
 			";
 		}
-		echo "
-			</table>
-		</table>
-		";
+
 	}
 }
 ?>
