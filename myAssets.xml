@@ -2,7 +2,7 @@
     <name>My Assets</name>
     <key>myassets</key>
     <state>stable</state>
-    <logo>https://raw.githubusercontent.com/deadmanIsARabbit/myAssets/master/ayeQLogo.png</logo>
+    <logo>https://raw.githubusercontent.com/deadmanIsARabbit/myAssets/master/heyday_logo.jpg</logo>
     <description>
         <short>
             <en><![CDATA[Displays user assets on his/her dashboard]]></en>
@@ -18,7 +18,7 @@
     <issues>https://github.com/deadmanIsARabbit/myAssets/issues</issues>
     <readme>https://raw.githubusercontent.com/deadmanIsARabbit/myAssets/master/README.md</readme>
     <authors>
-        <author>Matthaeus Kuhn (m.kuhn@ayeq-benu.com)</author>
+        <author>Matthaeus Kuhn (m.kuhn@heyday.marketing)</author>
     </authors>
     <versions>
         <version>

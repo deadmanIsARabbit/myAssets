@@ -6,9 +6,9 @@
 		return array(
 			'name'           => "My Assets",
 			'version'        => '1.0',
-			'author'         => 'Matthaeus Kuhn <m.kuhn@ayeq-benu.com>',
+			'author'         => 'Matthaeus Kuhn <m.kuhn@heyday.marketing>',
 			'license'        => 'GPLv2+',
-			'homepage'       => 'http://ayeq-benu.com/',
+			'homepage'       => 'http://heyday.marketing/',
 			'minGlpiVersion' => '0.91'
 		);
 	};
