@@ -15,11 +15,12 @@ class PluginMyassetsAssets extends CommonGLPI {
 
 		// My items
 		 $entity_restrict=-1;
+		
 		foreach ($CFG_GLPI["linkuser_types"] as $itemtype) {
 			if (($item = getItemForItemtype($itemtype))
 				&& Ticket::isPossibleToAssignType($itemtype)) {
 				$itemtable = getTableForItemType($itemtype);
-
+				var_dump($itemtable);
 				$query	=	"SELECT *
 							FROM `$itemtable`
 							WHERE `users_id` = '$userID'";
@@ -70,6 +71,8 @@ class PluginMyassetsAssets extends CommonGLPI {
 		return $devices;
 	}
 	public function showAssets() {
+		global $DB, $CFG_GLPI;
+		var_dump($CFG_GLPI["linkuser_types"]);
 		$data = $this->getAssets();
 		echo "
 			<table class='myassets central'>
